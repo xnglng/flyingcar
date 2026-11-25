@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>空中出租车，离我们还有多远？| Joby S4 技术、场景与市场分析</title>
+  <meta name="description" content="Joby S4 eVTOL 的全方位调研：倾转旋翼技术、FAA 适航进展、机场接驳场景、单位经济性与城市空中交通市场。证据截止 2026-11-25。">
+  <meta name="author" content="飞行汽车技术基础课程作业">
+  <meta name="theme-color" content="#101c24">
+  <script>document.documentElement.classList.add('js');</script>
+  <meta property="og:title" content="空中出租车，离我们还有多远？">
+  <meta property="og:description" content="Joby S4 的技术、场景与市场可行性分析。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body id="top">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <div class="progress" aria-hidden="true"><span id="progress-bar"></span></div>
+
+  <header class="site-header" id="site-header">
+    <div class="wrap header-inner">
+      <a class="brand" href="#top" aria-label="返回顶部">
+        <span class="brand-mark">J/S4</span>
+        <span class="brand-text">低空航线档案<small>JOBY S4 / CASE 03</small></span>
+      </a>
+      <nav class="site-nav" id="site-nav" aria-label="章节导航">
+        <a href="#summary">摘要</a>
+        <a href="#product">产品</a>
+        <a href="#technology">技术</a>
+        <a href="#certification">适航</a>
+        <a href="#routes">场景</a>
+        <a href="#market">市场</a>
+        <a href="#competition">竞争</a>
+        <a href="#roadmap">路线</a>
+        <a href="#sources">来源</a>
+      </nav>
+      <div class="header-actions">
+        <button class="icon-btn" type="button" data-print aria-label="打印或存为 PDF">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 8V3h10v5M7 17H5a2 2 0 0 1-2-2v-4a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v4a2 2 0 0 1-2 2h-2M7 14h10v7H7z"/></svg>
+          <span>打印</span>
+        </button>
+        <button class="menu-btn" type="button" id="menu-btn" aria-controls="site-nav" aria-expanded="false" aria-label="打开导航菜单"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero" aria-labelledby="hero-title">
+      <img class="hero-bg" src="assets/img/hero-s4.jpg" alt="Joby S4 电动垂直起降飞行器停在美国爱德华兹空军基地滑行道上" fetchpriority="high">
+      <div class="hero-overlay"></div>
+      <div class="wrap hero-inner">
+        <div class="hero-copy">
+          <div class="kicker reveal"><span class="kicker-dot"></span>飞行汽车技术基础 · 课程作业 01 / CASE 03</div>
+          <h1 id="hero-title" class="reveal">空中出租车，<br><em>离我们还有多远？</em></h1>
+          <p class="hero-sub reveal">Joby <strong>S4</strong>：一架 eVTOL 的技术、场景与市场可行性</p>
+          <p class="hero-lead reveal">它不是一辆会飞的车，而是一套把机场、航线、飞行员和起降场重新组合的城市空中交通系统。S4 已经飞过纽约、迪拜和东京，但真正的商业运营，仍卡在最后一张证、最后一个起降场，以及每一班的上座率上。</p>
+          <div class="hero-meta reveal">
+            <span>对象 / Joby S4</span><span>方法 / 技术 · 场景 · 市场</span><span>证据截止 / 2026-11-25</span>
+          </div>
+          <div class="hero-cta reveal">
+            <a class="btn btn--primary" href="#summary">先看结论 <span aria-hidden="true">↓</span></a>
+            <button class="btn btn--ghost" type="button" data-print>打印 / 存为 PDF</button>
+          </div>
+        </div>
+        <div class="hero-side reveal">
+          <div class="hero-stamp">
+            <span class="mono">FIG. 01 / JOBY S4</span>
+            <b>1 PILOT + 4 PASSENGERS</b>
+            <small>EDWARDS AFB · 2023</small>
+          </div>
+          <div class="hero-credit">U.S. Air Force photo / Harlan Huntington · Public Domain</div>
+        </div>
+      </div>
+      <div class="wrap hero-stats reveal" aria-label="关键数据">
+        <div class="stat"><span class="stat-value" data-count="200">200</span><span class="stat-unit">mph</span><span class="stat-label">最高速度 / 约 322 km/h</span></div>
+        <div class="stat"><span class="stat-value" data-count="100">100</span><span class="stat-unit">+ mi</span><span class="stat-label">商业航程 / 约 161 km</span></div>
+        <div class="stat"><span class="stat-value">1+4</span><span class="stat-unit">座</span><span class="stat-label">1 名飞行员 + 4 名乘客</span></div>
+        <div class="stat"><span class="stat-value" data-count="45">45</span><span class="stat-unit">dBA</span><span class="stat-label">巡航噪声 / 500 m 高度</span></div>
+        <p class="stat-note">数据来自 Joby 官方技术页与公开资料。航程为“100+ 英里”商业航程口径；不同任务剖面、气象与储备会改变实际可用航程。</p>
+      </div>
+    </section>
+
+    <!-- 01 SUMMARY -->
+    <section class="section" id="summary" aria-labelledby="summary-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-no">01 / EXECUTIVE SUMMARY</div>
+          <h2 id="summary-title">先给结论：它不是一辆会飞的车</h2>
+          <p class="section-dek">S4 的产品逻辑更接近“支线航空 + 城市机场接驳”，而不是“会飞的私家车”。把它当车看，会高估它的道路能力；把它当航空公司看，才能看清它真正的门槛。</p>
+        </div>
+
+        <div class="findings">
+          <article class="finding reveal">
+            <div class="finding-no">01 / TECHNOLOGY</div>
+            <h3>技术已经跨过“能飞”，正在跨“可认证、可制造”</h3>
+            <p>六副倾转旋翼、四组独立电池、三套飞控计算机，让 S4 在速度、航程和噪声上明显优于多旋翼 eVTOL。真正的难点不再是飞起来，而是把试验构型变成可重复生产、可持续适航的工业产品。</p>
+            <div class="finding-tag">倾转旋翼 / 分布式电推进</div>
+          </article>
+          <article class="finding reveal">
+            <div class="finding-no">02 / BUSINESS</div>
+            <h3>2026 年的收入，主要还不是 S4</h3>
+            <p>Joby 2026 年收入指引约 1.35–1.40 亿美元，主要来自收购的 Blade 传统包机/直升机业务。S4 的商业载客尚未开始，FAA 型号合格证仍在最后阶段。订单和合作是需求信号，不是当期收入。</p>
+            <div class="finding-tag">Blade / 预商业化</div>
+          </article>
+          <article class="finding reveal">
+            <div class="finding-no">03 / MARKET</div>
+            <h3>第一个市场是机场，不是通勤</h3>
+            <p>100+ 英里航程、200 mph 速度、5 座布局，最适合 30–150 英里的机场接驳与城市群点到点。它无法替代地铁，也无法像汽车一样门到门；它的价值是把 60–120 分钟的地面行程压缩到 15–30 分钟。</p>
+            <div class="finding-tag">机场接驳 / 城市群</div>
+          </article>
+        </div>
+
+        <div class="thesis reveal">
+          <div class="thesis-mark">“</div>
+          <p>S4 的护城河，不是飞得多快，而是把<strong>适航、制造、运营、起降场</strong>同时跑通的能力。任何一项掉队，空中出租车就只能停留在演示。</p>
+          <span>THESIS / 本文核心判断</span>
+        </div>
+
+        <div class="time-scales">
+          <div class="time-card reveal"><span>NOW / 2026</span><h3>取证与制造</h3><p>FAA 第五阶段、17 架在生产、迪拜首站准备。收入靠 Blade，S4 还没开始卖票。</p></div>
+          <div class="time-card reveal"><span>NEXT / 2027</span><h3>首航与利用率</h3><p>TC + AOC + 起降场 + 飞行员。第一批航线能否做到每天 8–10 班，是商业化的第一道真考题。</p></div>
+          <div class="time-card reveal"><span>LATER / 2030+</span><h3>网络与成本</h3><p>从机场接驳扩展到城市群。票价从直升机级降到高端网约车级，才可能形成大众市场。</p></div>
+        </div>
+
+        <div class="quick-facts reveal">
+          <div><b>5th</b><span>FAA 型号认证阶段（共 5 阶段）</span></div>
+          <div><b>17</b><span>2026 Q3 在生产飞机数</span></div>
+          <div><b>$2.2B</b><span>现金及短期投资（2026-09-30）</span></div>
+          <div><b>44k+</b><span>Blade 单季乘客（2026 Q3）</span></div>
+        </div>
+        <p class="section-footnote">“5th”表示公司披露已进入第五阶段并完成大量“for credit”测试；截至 2026-11-25，公开渠道尚未见 FAA 型号合格证（TC）颁发。</p>
+      </div>
+    </section>
+
+    <!-- 02 PRODUCT -->
+    <section class="section section--paper" id="product" aria-labelledby="product-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-no">02 / PRODUCT &amp; COMPANY</div>
+          <h2 id="product-title">一架五座 eVTOL，<br>和它的“航空公司”野心</h2>
+          <p class="section-dek">Joby 不只是造飞机。它想同时做制造商、运营商、起降场合作方和空中交通平台；Blade 的收购让它在 S4 取证前就拥有了乘客、航线和运营团队。</p>
+        </div>
+
+        <div class="product-grid">
+          <div class="product-copy reveal">
+            <h3>S4：为“城市间 30–150 英里”设计</h3>
+            <p>S4 采用六副可倾转旋翼：垂直起降时旋翼朝上，巡航时向前倾转，靠机翼产生升力。与多旋翼 eVTOL 相比，它在巡航效率、速度和航程上更有优势；代价是过渡段控制、机械复杂度和适航验证难度更高。</p>
+            <p>它有一名飞行员和四名乘客，定位不是“无人驾驶观光”，而是可融入现有机场、空管和航空运营体系的载人空中出租车。Joby 同时推进 FAA 型号认证、Part 135 运营资质、迪拜首站和丰田制造合作。</p>
+            <div class="company-tags"><span>NYSE: JOBY</span><span>2009 年成立</span><span>Santa Cruz / Marina, CA</span><span>制造商 + 运营商</span></div>
+          </div>
+          <div class="spec-panel reveal">
+            <div class="mono">SPEC SHEET / S4</div>
+            <dl>
+              <div><dt>座位</dt><dd>1 名飞行员 + 4 名乘客</dd></div>
+              <div><dt>最高速度</dt><dd>200 mph / 322 km/h</dd></div>
+              <div><dt>商业航程</dt><dd>100+ miles / 161+ km</dd></div>
+              <div><dt>最大重量</dt><dd>2,400 kg / 5,300 lb</dd></div>
+              <div><dt>动力</dt><dd>6 副倾转旋翼 / 6 台双绕组电机</dd></div>
+              <div><dt>能源</dt><dd>4 组独立电池包</dd></div>
+              <div><dt>飞控</dt><dd>三余度飞行控制计算机</dd></div>
+              <div><dt>噪声</dt><dd>45 dBA 巡航 / 65 dBA 着陆</dd></div>
+              <div><dt>升限</dt><dd>10,000 ft / 3,048 m</dd></div>
+            </dl>
+            <p class="card-source">来源：Joby 官方技术页 [1]；商业航程与座位口径来自公开资料 [2][3]。</p>
+          </div>
+        </div>
+
+        <div class="compare-strip reveal">
+          <div><span class="mono">不是 ROADABLE</span><h4>它不是 X3-F 那种“能上路”的飞行汽车</h4><p>没有车轮、没有道路认证、不能停进车库。它需要起降场、空管、飞行员和维修体系。</p></div>
+          <div><span class="mono">不是 AUTONOMOUS</span><h4>它也不是 EH216-S 那种“无人驾驶”</h4><p>驾驶舱里有飞行员，运营体系更接近航空公司，而不是远程监控的无人观光航空器。</p></div>
+          <div><span class="mono">它是 AIR TAXI</span><h4>它把“机场”变成城市基础设施</h4><p>核心产品是 15–30 分钟的空中位移，以及比直升机更安静、更便宜、更可规模化的运营。</p></div>
+        </div>
+      </div>
+
+      <figure class="photo-band reveal">
+        <img src="assets/img/flight-tampa.jpg" alt="Joby S4 在佛罗里达州坦帕市上空飞行" loading="lazy">
+        <figcaption><span>图 2</span> Joby S4 在佛罗里达州坦帕上空飞行，2026 年 10 月。图片来源：Joby Aviation [2]。 <em>Photo: Joby Aviation</em></figcaption>
+      </figure>
+
+      <div class="wrap">
+        <div class="business-model reveal">
+          <div class="mono-label">BUSINESS MODEL / 四条腿</div>
+          <div class="bm-grid">
+            <div><b>01</b><h4>造飞机</h4><p>向运营商销售 S4，或用自己的机队运营；丰田参与制造体系。</p></div>
+            <div><b>02</b><h4>卖航线</h4><p>与 Delta、Uber、迪拜 RTA 等合作，切入机场接驳与城市群航线。</p></div>
+            <div><b>03</b><h4>收 Blade</h4><p>Blade 提供现成的乘客、航线、运营团队与收入，填补 S4 取证前的空窗。</p></div>
+            <div><b>04</b><h4>做防务/自治</h4><p>美国空军合同、J208 自治飞行，为技术外溢与现金流提供第二条曲线。</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 03 TECHNOLOGY -->
+    <section class="section section--dark" id="technology" aria-labelledby="technology-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-no">03 / TECHNOLOGY</div>
+          <h2 id="technology-title">六个倾转旋翼，为什么不是多旋翼？</h2>
+          <p class="section-dek">多旋翼靠“多”换安全，倾转旋翼靠“变”换效率。S4 的六副旋翼在起飞时朝上、巡航时向前倾转，让飞机从“直升机模式”过渡到“固定翼模式”。这带来速度与航程，也带来过渡控制、机械复杂度和适航验证的难题。</p>
+        </div>
+
+        <div class="tech-layout">
+          <div class="tech-figure reveal">
+            <svg viewBox="0 40 900 370" role="img" aria-labelledby="tech-svg-title tech-svg-desc">
+              <title id="tech-svg-title">Joby S4 六副倾转旋翼与飞行模式示意</title>
+              <desc id="tech-svg-desc">左侧为垂直起降模式，六副旋翼朝上；中间为过渡模式，旋翼逐渐前倾；右侧为巡航模式，旋翼朝前、机翼产生升力。</desc>
+              <defs>
+                <marker id="tArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 10 5 0 10z" fill="#9fc7d8"/></marker>
+              </defs>
+              <rect width="900" height="600" fill="#0d222b"/>
+              <g opacity=".14" stroke="#dcecf2"><path d="M0 100H900M0 200H900M0 300H900M0 400H900M0 500H900M100 0V600M200 0V600M300 0V600M400 0V600M500 0V600M600 0V600M700 0V600M800 0V600"/></g>
+              <text x="40" y="46" class="svg-mono">FIG. 03 / HOVER → TRANSITION → CRUISE</text>
+              <text x="860" y="46" text-anchor="end" class="svg-mono">SCHEMATIC / NOT TO SCALE</text>
+
+              <g transform="translate(90 160)">
+                <text x="0" y="0" class="svg-kicker">01 / HOVER</text>
+                <text x="0" y="24" class="svg-label">垂直起降</text>
+                <text x="0" y="44" class="svg-small">旋翼朝上 · 高功率 · 低速度</text>
+                <g transform="translate(120 130)">
+                  <rect x="-90" y="-26" width="180" height="52" rx="26" fill="#e9f2f5"/>
+                  <ellipse cx="0" cy="0" rx="42" ry="20" fill="#1a3d49" stroke="#e9f2f5" stroke-width="2"/>
+                  <g stroke="#9fc7d8" stroke-width="4" stroke-linecap="round">
+                    <path d="M-120 -50V-10M-60 -50V-10M60 -50V-10M120 -50V-10"/>
+                  </g>
+                  <g fill="#e4572e"><circle cx="-120" cy="-58" r="5"/><circle cx="-60" cy="-58" r="5"/><circle cx="60" cy="-58" r="5"/><circle cx="120" cy="-58" r="5"/></g>
+                </g>
+              </g>
+              <path d="M300 300H380" stroke="#9fc7d8" stroke-width="1.5" marker-end="url(#tArrow)"/>
+
+              <g transform="translate(330 160)">
+                <text x="0" y="0" class="svg-kicker">02 / TRANSITION</text>
+                <text x="0" y="24" class="svg-label">过渡</text>
+                <text x="0" y="44" class="svg-small">升力从旋翼转向机翼</text>
+                <g transform="translate(120 130)">
+                  <rect x="-90" y="-26" width="180" height="52" rx="26" fill="#e9f2f5"/>
+                  <ellipse cx="0" cy="0" rx="42" ry="20" fill="#1a3d49" stroke="#e9f2f5" stroke-width="2"/>
+                  <g stroke="#9fc7d8" stroke-width="4" stroke-linecap="round" transform="rotate(-35)">
+                    <path d="M-120 -50V-10M-60 -50V-10M60 -50V-10M120 -50V-10"/>
+                  </g>
+                  <g fill="#e4572e" transform="rotate(-35)"><circle cx="-120" cy="-58" r="5"/><circle cx="-60" cy="-58" r="5"/><circle cx="60" cy="-58" r="5"/><circle cx="120" cy="-58" r="5"/></g>
+                </g>
+              </g>
+              <path d="M570 300H650" stroke="#9fc7d8" stroke-width="1.5" marker-end="url(#tArrow)"/>
+
+              <g transform="translate(570 160)">
+                <text x="0" y="0" class="svg-kicker">03 / CRUISE</text>
+                <text x="0" y="24" class="svg-label">巡航</text>
+                <text x="0" y="44" class="svg-small">旋翼朝前 · 机翼升力 · 低噪声</text>
+                <g transform="translate(120 130)">
+                  <rect x="-90" y="-26" width="180" height="52" rx="26" fill="#e9f2f5"/>
+                  <ellipse cx="0" cy="0" rx="42" ry="20" fill="#1a3d49" stroke="#e9f2f5" stroke-width="2"/>
+                  <g stroke="#9fc7d8" stroke-width="4" stroke-linecap="round" transform="rotate(-78)">
+                    <path d="M-120 -50V-10M-60 -50V-10M60 -50V-10M120 -50V-10"/>
+                  </g>
+                  <g fill="#e4572e" transform="rotate(-78)"><circle cx="-120" cy="-58" r="5"/><circle cx="-60" cy="-58" r="5"/><circle cx="60" cy="-58" r="5"/><circle cx="120" cy="-58" r="5"/></g>
+                </g>
+              </g>
+
+              <g transform="translate(40 500)">
+                <text x="0" y="0" class="svg-mono">6 TILTING PROPELLERS · 6 DUAL-WOUND MOTORS · 4 BATTERY PACKS · TRIPLE-REDUNDANT FCC</text>
+                <text x="0" y="24" class="svg-mono">THE HARD PART IS NOT LIFT — IT IS THE TRANSITION, THE THERMAL BUDGET, AND THE CERTIFICATION EVIDENCE.</text>
+              </g>
+            </svg>
+            <figcaption>图 3 / 悬停—过渡—巡航。六副旋翼从垂直升力切换到机翼升力；过渡段是控制与能量最复杂的阶段。示意图不按比例。</figcaption>
+          </div>
+
+          <div class="tech-cards reveal">
+            <div class="tech-card"><span>01</span><h4>倾转旋翼：用复杂度换航程</h4><p>悬停时六副旋翼朝上；巡航时向前倾转，机翼承担升力。巡航效率远高于多旋翼，但过渡段的推力、姿态与气动耦合最难控制。</p></div>
+            <div class="tech-card"><span>02</span><h4>四组独立电池 + 双绕组电机</h4><p>四个独立电池包带故障隔离，六台双绕组电机提供冗余。能量密度、热管理与快充速度，决定周转时间和单机日利用率。</p></div>
+            <div class="tech-card"><span>03</span><h4>三余度飞控 + 双余度作动</h4><p>三套飞控计算机、双关键作动系统，让单点失效可控。但共模失效、软件缺陷、传感器一致性仍需通过适航验证。</p></div>
+            <div class="tech-card"><span>04</span><h4>45 dBA：噪声是商业许可</h4><p>巡航 45 dBA、着陆 65 dBA 的数据，是 S4 进入城市的前提。噪声不是“体验问题”，而是社区接受与起降场选址的硬约束。</p></div>
+          </div>
+        </div>
+
+        <div class="tech-photo reveal">
+          <img src="assets/img/detail-wing.jpg" alt="Joby S4 机翼与倾转旋翼结构细节" loading="lazy">
+          <div class="tech-photo-copy"><span class="mono">DETAIL / COMPOSITE + TILT</span><p>轻量化复材结构、倾转机构与气动外形，是 S4 把“直升机起降”和“固定翼巡航”放进同一架飞机的关键。图片：Joby Aviation [1]。</p></div>
+        </div>
+
+        <div class="scorecard reveal">
+          <div class="score-head"><div><div class="mono-label">FEASIBILITY SCORECARD / 本文评估</div><h3>技术可行，但“商业可行”还没被证明</h3></div><span>1—5</span></div>
+          <div class="score-rows">
+            <div><span>飞行器技术</span><div class="bar"><i style="--w:88%"></i></div><b>4.4</b></div>
+            <div><span>适航取证</span><div class="bar"><i style="--w:76%"></i></div><b>3.8</b></div>
+            <div><span>制造与供应链</span><div class="bar"><i style="--w:70%"></i></div><b>3.5</b></div>
+            <div><span>起降场与空域</span><div class="bar"><i style="--w:48%"></i></div><b>2.4</b></div>
+            <div><span>单位经济性</span><div class="bar"><i style="--w:40%"></i></div><b>2.0</b></div>
+          </div>
+          <p class="score-note">评分是本文基于公开资料的结构化判断，不是企业或局方结论。分数越高表示证据越充分，不等于风险越低。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 04 CERTIFICATION -->
+    <section class="section" id="certification" aria-labelledby="certification-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-no">04 / CERTIFICATION &amp; SAFETY</div>
+          <h2 id="certification-title">最后一张证，决定第一张票</h2>
+          <p class="section-dek">FAA 型号合格证（TC）证明设计合规，Part 135 证明可以运营，GCAA 的 AOC 证明可以在迪拜载客。三张纸，缺一张就不能卖票。</p>
+        </div>
+
+        <div class="cert-layout">
+          <div class="stage-panel reveal">
+            <div class="mono-label">FAA TYPE CERTIFICATION / 5 STAGES</div>
+            <div class="stage-list">
+              <div class="stage-item done"><span>01</span><div><b>概念与审定基础</b><small>需求、专用条件、审定计划</small></div><em>完成</em></div>
+              <div class="stage-item done"><span>02</span><div><b>设计符合性</b><small>结构、系统、软件、安全性分析</small></div><em>完成</em></div>
+              <div class="stage-item done"><span>03</span><div><b>符合性计划</b><small>试验矩阵、供应商、制造符合性</small></div><em>完成</em></div>
+              <div class="stage-item active"><span>04</span><div><b>符合性验证</b><small>试飞、试验、故障注入、局方目击</small></div><em>进行中</em></div>
+              <div class="stage-item active"><span>05</span><div><b>最终审定</b><small>“for credit”试飞、文件审查、TC 颁发</small></div><em>最后阶段</em></div>
+            </div>
+            <p class="stage-note">截至 2026-11-25，Joby 披露已完成大量第五阶段“for credit”测试；公开渠道尚未见 TC 颁发。进度以局方最终审查为准。</p>
+          </div>
+
+          <div class="cert-side">
+            <div class="cert-card reveal"><div class="mono-label">FAA / TC</div><h3>型号合格证</h3><p>验证设计符合适航要求。S4 仍在第五阶段；这是美国商业载客的前置条件，也是最难的一关。</p><span class="status status--pending">未公开颁发</span></div>
+            <div class="cert-card reveal"><div class="mono-label">FAA / PART 135</div><h3>航空承运人资质</h3><p>Joby 已持有 Part 135，可运营包机/按需航空服务；但没有 TC，S4 还不能作为该资质下的载客机型。</p><span class="status status--done">已取得</span></div>
+            <div class="cert-card reveal"><div class="mono-label">UAE / GCAA</div><h3>迪拜商业运营</h3><p>迪拜机场旁起降场 2026 年 7 月获 GCAA 认证；Joby 仍需 GCAA 的 AOC。目标 2026 年底首航，但截至 10 月尚无付费乘客。</p><span class="status status--pending">AOC 待批</span></div>
+          </div>
+        </div>
+
+        <div class="cert-timeline reveal">
+          <div class="mono-label">MILESTONES / 2022—2027</div>
+          <div class="timeline-track">
+            <div class="tl-item"><b>2022</b><span>FAA Part 135</span><small>可运营按需航空服务</small></div>
+            <div class="tl-item"><b>2023</b><span>交付空军</span><small>Edwards AFB 测试</small></div>
+            <div class="tl-item"><b>2025.08</b><span>首个公共机场间飞行</span><small>有人驾驶 eVTOL</small></div>
+            <div class="tl-item"><b>2025.11</b><span>迪拜 17 分钟点到点</span><small>Margham → DWC</small></div>
+            <div class="tl-item"><b>2026.03</b><span>首架 FAA 构型机试飞</span><small>生产代表型</small></div>
+            <div class="tl-item"><b>2026.07</b><span>迪拜垂直起降场认证</span><small>年容量 17 万人次</small></div>
+            <div class="tl-item active"><b>2026.10</b><span>FAA 第五阶段</span><small>for credit 测试</small></div>
+            <div class="tl-item pending"><b>2026/27</b><span>TC + AOC + 首航</span><small>仍未发生</small></div>
+          </div>
+        </div>
+
+        <div class="callout callout--warn reveal">
+          <div class="callout-mark">!</div>
+          <div><h4>“进入第五阶段”不等于“明天就能卖票”</h4><p>TC 之后还有生产许可证（PC）、单机适航证（AC）、运营人 AOC、飞行员训练、维修体系与保险。迪拜起降场已经认证，但没有付费乘客；美国市场还要等 FAA TC 与 eIPP 试点扩展。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 05 ROUTES -->
+    <section class="section section--paper" id="routes" aria-labelledby="routes-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-no">05 / USE CASES &amp; ROUTES</div>
+          <h2 id="routes-title">先卖机场，再卖城市</h2>
+          <p class="section-dek">S4 的第一个产品不是“城市通勤”，而是“把机场变近”。30–150 英里的航程、200 mph 的速度和 5 座布局，正好覆盖机场接驳、城市群点到点和高端商务出行。</p>
+        </div>
+
+        <div class="route-layout">
+          <div class="route-map-wrap reveal">
+            <div class="route-map-head"><div class="mono-label">LAUNCH NETWORK / SCHEMATIC</div><div class="route-legend"><span><i class="dot dot--live"></i>已飞行/试点</span><span><i class="dot dot--plan"></i>规划</span></div></div>
+            <svg class="route-map" viewBox="0 0 1000 560" role="img" aria-labelledby="route-map-title route-map-desc">
+              <title id="route-map-title">Joby S4 潜在航线网络示意</title>
+              <desc id="route-map-desc">迪拜、纽约、洛杉矶、东京和旧金山五个城市节点及其机场接驳航线；连线仅表示潜在航线，不代表已开通。</desc>
+              <rect width="1000" height="560" fill="#f6f3ec"/>
+              <g opacity=".1" stroke="#101c24"><path d="M0 80H1000M0 160H1000M0 240H1000M0 320H1000M0 400H1000M0 480H1000M100 0V560M200 0V560M300 0V560M400 0V560M500 0V560M600 0V560M700 0V560M800 0V560M900 0V560"/></g>
+              <path d="M100 430C260 300 350 180 500 200S760 330 900 180" fill="none" stroke="#2b6f8a" stroke-width="1.2" stroke-dasharray="4 6" opacity=".5"/>
+              <g class="route-arcs" fill="none" stroke="#e4572e" stroke-width="2" stroke-dasharray="7 6">
+                <path data-route-arc="dubai-palm" d="M160 360Q230 300 300 340"/>
+                <path data-route-arc="dubai-abudhabi" d="M160 360Q250 430 360 410"/>
+                <path data-route-arc="nyc-jfk" d="M610 180Q660 130 720 165"/>
+                <path data-route-arc="la-lax" d="M420 430Q500 380 560 420"/>
+                <path data-route-arc="tokyo-narita" d="M780 300Q850 250 900 300"/>
+              </g>
+              <g class="route-nodes">
+                <g class="route-node" data-route="dubai-palm" transform="translate(160,360)"><circle r="12"/><text x="0" y="30" text-anchor="middle">DUBAI / DXB</text><text x="0" y="46" text-anchor="middle" class="route-small">UAE</text></g>
+                <g class="route-node" data-route="dubai-palm" transform="translate(300,340)"><circle r="8"/><text x="0" y="-18" text-anchor="middle">PALM</text></g>
+                <g class="route-node" data-route="dubai-abudhabi" transform="translate(360,410)"><circle r="8"/><text x="0" y="28" text-anchor="middle">ABU DHABI</text></g>
+                <g class="route-node" data-route="nyc-jfk" transform="translate(610,180)"><circle r="12"/><text x="0" y="-18" text-anchor="middle">NEW YORK</text></g>
+                <g class="route-node" data-route="nyc-jfk" transform="translate(720,165)"><circle r="8"/><text x="0" y="-16" text-anchor="middle">JFK</text></g>
+                <g class="route-node" data-route="la-lax" transform="translate(420,430)"><circle r="12"/><text x="0" y="30" text-anchor="middle">LOS ANGELES</text></g>
+                <g class="route-node" data-route="la-lax" transform="translate(560,420)"><circle r="8"/><text x="0" y="28" text-anchor="middle">LAX</text></g>
+                <g class="route-node" data-route="tokyo-narita" transform="translate(780,300)"><circle r="12"/><text x="0" y="30" text-anchor="middle">TOKYO</text></g>
+                <g class="route-node" data-route="tokyo-narita" transform="translate(900,300)"><circle r="8"/><text x="0" y="-16" text-anchor="middle">NARITA</text></g>
+              </g>
+              <g class="route-labels">
+                <text x="230" y="290">12 mi / 10 min</text>
+                <text x="230" y="470">85 mi / 25 min</text>
+                <text x="635" y="125">15 mi / 12 min</text>
+                <text x="455" y="380">18 mi / 12 min</text>
+                <text x="820" y="250">40 mi / 20 min</text>
+              </g>
+              <text x="40" y="530" class="svg-mono">SCHEMATIC / NOT A ROUTE MAP / DISTANCES APPROXIMATE</text>
+            </svg>
+            <p class="mobile-hint">← 左右滑动查看完整航线图 →</p>
+          </div>
+
+          <div class="route-panel reveal">
+            <div class="mono-label">SELECT A ROUTE / 点击查看</div>
+            <div class="route-list" role="group" aria-label="潜在航线列表">
+              <button class="route-btn is-active" data-route="dubai-palm" aria-pressed="true"><span>DXB ↔ PALM</span><b>迪拜机场岛内接驳</b><small>12 mi · 10 min</small></button>
+              <button class="route-btn" data-route="dubai-abudhabi" aria-pressed="false"><span>DXB ↔ AUH</span><b>迪拜—阿布扎比</b><small>85 mi · 25 min</small></button>
+              <button class="route-btn" data-route="nyc-jfk" aria-pressed="false"><span>JFK ↔ MANHATTAN</span><b>纽约机场接驳</b><small>15 mi · 12 min</small></button>
+              <button class="route-btn" data-route="la-lax" aria-pressed="false"><span>LAX ↔ DOWNTOWN</span><b>洛杉矶机场接驳</b><small>18 mi · 12 min</small></button>
+              <button class="route-btn" data-route="tokyo-narita" aria-pressed="false"><span>NARITA ↔ TOKYO</span><b>东京机场接驳</b><small>40 mi · 20 min</small></button>
+            </div>
+            <div class="route-detail" id="route-detail" aria-live="polite">
+              <div class="mono-label" id="route-kicker">LAUNCH MARKET / UAE</div>
+              <h3 id="route-title">迪拜机场岛内接驳</h3>
+              <p id="route-copy">从迪拜国际机场到棕榈岛/酒店区，绕开地面拥堵。迪拜起降场已获 GCAA 认证，但 Joby 仍需 AOC；截至 2026 年 10 月尚无付费乘客。</p>
+              <div class="route-facts" id="route-facts"><span>空中 10 min</span><span>地面 35–50 min</span><span>票价假设 $150–250</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="mission-grid">
+          <div class="mission-card reveal"><span class="mono">MISSION / 01</span><h3>机场接驳</h3><p>最现实的楔子。旅客对时间敏感、行李少、起降场可设在机场/酒店，票价可与直升机对标。</p><b>适配度 9/10</b></div>
+          <div class="mission-card reveal"><span class="mono">MISSION / 02</span><h3>城市群点到点</h3><p>迪拜—阿布扎比、纽约—周边、东京—成田。100+ 英里航程刚好覆盖，但需要双边起降场与空域协调。</p><b>适配度 7/10</b></div>
+          <div class="mission-card reveal"><span class="mono">MISSION / 03</span><h3>高端商务/包机</h3><p>与 Blade 现有客群重叠，可用现成需求验证票价与利用率；规模有限，但现金流质量高。</p><b>适配度 7/10</b></div>
+          <div class="mission-card reveal"><span class="mono">MISSION / 04</span><h3>日常通勤</h3><p>起降场密度、票价、噪声与空管都不支持“门到门”。2030 年前不是主战场。</p><b>适配度 2/10</b></div>
+        </div>
+
+        <div class="mission-profile reveal">
+          <div class="mono-label">MISSION PROFILE / 25-MINUTE FLIGHT</div>
+          <div class="profile-bars">
+            <div><span>垂直爬升</span><i style="--w:12%"></i><b>0–2 min</b></div>
+            <div><span>过渡</span><i style="--w:18%"></i><b>2–5 min</b></div>
+            <div><span>巡航</span><i style="--w:52%"></i><b>5–20 min</b></div>
+            <div><span>下降/着陆</span><i style="--w:18%"></i><b>20–25 min</b></div>
+          </div>
+          <p class="note">典型任务剖面为示意；实际时间取决于航线、气象、空管与 reserve。过渡段是能量与噪声最集中的阶段，也是适航验证的重点。</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- 06 MARKET -->
+    <section class="section" id="market" aria-labelledby="market-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-no">06 / MARKET &amp; UNIT ECONOMICS</div>
+          <h2 id="market-title">市场不是 TAM，是每一班的上座率</h2>
+          <p class="section-dek">“万亿低空经济”不能直接除以一款机型。对 S4 来说，市场必须拆成：哪些城市、哪些航线、什么票价、每架飞机每天能飞几班、每班能卖几个座。</p>
+        </div>
+
+        <div class="market-lenses">
+          <div class="lens-card reveal"><span class="mono">TAM / 叙事</span><b>$36B</b><p>2035 年全球空中出租车收入预测（SRI，2026）。这是“品类”口径，不等于 Joby 的收入。</p><small>[5]</small></div>
+          <div class="lens-card reveal"><span class="mono">SAM / 可服务</span><b>5 城</b><p>迪拜、纽约、洛杉矶、东京、旧金山等首批市场；受起降场、空域、AOC 与需求限制。</p><small>本文判断</small></div>
+          <div class="lens-card reveal"><span class="mono">SOM / 可获得</span><b>17 架</b><p>2026 Q3 在生产飞机数；首批机队能飞多少班、卖多少座，决定近期收入。</p><small>[2]</small></div>
+          <div class="lens-card reveal"><span class="mono">REVENUE / 现实</span><b>$135–140M</b><p>2026 年收入指引，主要来自 Blade 传统业务，不是 S4 空中出租车。</p><small>[2]</small></div>
+        </div>
+
+        <div class="market-grid">
+          <div class="calc-card reveal">
+            <div class="calc-head"><div class="mono">UNIT ECONOMICS / 单机模型</div><h3>一架 S4，一天要飞几班才不亏？</h3></div>
+            <div class="calc-controls">
+              <label>单座票价（美元）<output id="fare-out">300</output><input type="range" id="fare-input" min="80" max="600" step="10" value="300"></label>
+              <label>平均售出座位（/4）<output id="seats-out">3.8</output><input type="range" id="seats-input" min="1" max="4" step="0.1" value="3.8"></label>
+              <label>每日班次<output id="flights-out">12</output><input type="range" id="flights-input" min="2" max="20" step="1" value="12"></label>
+              <label>年运营天数<output id="days-out">320</output><input type="range" id="days-input" min="200" max="365" step="5" value="320"></label>
+              <label>单班直接成本（美元）<output id="varcost-out">650</output><input type="range" id="varcost-input" min="300" max="1500" step="50" value="650"></label>
+              <label>年固定成本（万美元）<output id="fixed-out">50</output><input type="range" id="fixed-input" min="20" max="150" step="5" value="50"></label>
+            </div>
+            <div class="calc-results">
+              <div><span>年收入</span><strong id="revenue-out">438 万</strong></div>
+              <div><span>年成本</span><strong id="cost-out">300 万</strong></div>
+              <div><span>EBITDA</span><strong id="ebitda-out">138 万</strong></div>
+            </div>
+            <div class="calc-results calc-results--three">
+              <div><span>成本 / 座英里</span><strong id="casm-out">$6.8</strong></div>
+              <div><span>盈亏平衡票价</span><strong id="be-fare-out">$205</strong></div>
+              <div><span>静态回收期</span><strong id="payback-out">3.3 年</strong></div>
+            </div>
+            <p class="calc-note">假设：30 英里航线、4 座、飞机价格 450 万美元、无补贴/融资成本/税费。模型只用于说明敏感性，不是 Joby 财务预测。</p>
+          </div>
+
+          <div class="fare-card reveal">
+            <div class="calc-head"><div class="mono">FARE LADDER / 票价阶梯</div><h3>从直升机价，到高端网约车价</h3></div>
+            <div class="fare-row"><span>直升机机场接驳</span><i style="--w:100%"></i><b>$300–500</b></div>
+            <div class="fare-row"><span>早期空中出租车</span><i style="--w:58%"></i><b>$200–300</b></div>
+            <div class="fare-row"><span>规模化目标</span><i style="--w:28%"></i><b>$80–120</b></div>
+            <div class="fare-row"><span>高端网约车</span><i style="--w:18%"></i><b>$50–80</b></div>
+            <p class="note">票价区间为本文基于公开访谈与同类服务的估算，不是 Joby 官方定价。早期票价更可能对标直升机，而非 Uber。</p>
+          </div>
+        </div>
+
+        <div class="revenue-reality reveal">
+          <div><span class="mono">2026 Q3 / REALITY CHECK</span><h3>收入在涨，但还不是 S4 的钱</h3><p>Q3 收入 5,500 万美元，主要来自 Blade；Blade 单季运送 44,000+ 乘客。S4 的商业载客尚未开始。把“收入增长”当成“空中出租车规模化”，会误判拐点。</p></div>
+          <div class="revenue-grid">
+            <div><b>$55M</b><span>2026 Q3 收入</span></div>
+            <div><b>44k+</b><span>Blade 乘客</span></div>
+            <div><b>17</b><span>在生产飞机</span></div>
+            <div><b>$2.2B</b><span>现金/短期投资</span></div>
+          </div>
+        </div>
+
+        <div class="market-risks">
+          <div class="risk-card reveal"><span>01</span><h4>认证延期</h4><p>TC/AOC 每延后一个季度，首批机队的收入和利用率窗口就少一个季度。</p></div>
+          <div class="risk-card reveal"><span>02</span><h4>起降场密度</h4><p>没有足够起降场，S4 只能做点对点演示，无法形成网络效应。</p></div>
+          <div class="risk-card reveal"><span>03</span><h4>票价与需求</h4><p>早期票价接近直升机；如果上座率不足，单机经济性无法成立。</p></div>
+          <div class="risk-card reveal"><span>04</span><h4>制造与现金</h4><p>17 架在生产，但规模化制造、供应链与现金消耗仍是硬约束。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 07 COMPETITION -->
+    <section class="section section--dark" id="competition" aria-labelledby="competition-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-no">07 / COMPETITIVE LANDSCAPE</div>
+          <h2 id="competition-title">Joby 领先，但不是唯一</h2>
+          <p class="section-dek">eVTOL 赛道不是“谁先飞谁赢”，而是“谁先把适航、制造、运营和起降场同时跑通”。Joby 在 FAA 进度和垂直整合上领先，但 Archer、Beta、EHang、Vertical 都在不同维度追赶。</p>
+        </div>
+
+        <div class="position-wrap">
+          <div class="position-map reveal">
+            <div class="pm-head"><span class="mono">CERTIFICATION PROGRESS →</span><span class="mono">RANGE (MI) →</span></div>
+            <svg viewBox="0 0 900 520" role="img" aria-labelledby="pos-title pos-desc">
+              <title id="pos-title">eVTOL 竞争定位图</title>
+              <desc id="pos-desc">横轴为适航与商业化进度，纵轴为航程，圆圈大小表示座位数。Joby S4 位于右上区域，EH216-S 位于左侧高进度低航程，Archer、Beta、Vertical 分布在中部。</desc>
+              <rect width="900" height="520" fill="#0d222b"/>
+              <g opacity=".12" stroke="#dcecf2"><path d="M80 80H820M80 180H820M80 280H820M80 380H820M80 480H820M80 80V480M260 80V480M440 80V480M620 80V480M820 80V480"/></g>
+              <line x1="80" y1="480" x2="820" y2="480" stroke="#9fc7d8" stroke-opacity=".5"/>
+              <line x1="80" y1="480" x2="80" y2="80" stroke="#9fc7d8" stroke-opacity=".5"/>
+              <text x="450" y="508" text-anchor="middle" class="svg-mono">CERTIFICATION / COMMERCIALIZATION →</text>
+              <text x="34" y="280" text-anchor="middle" transform="rotate(-90 34 280)" class="svg-mono">RANGE / MI →</text>
+              <g class="pm-points">
+                <g transform="translate(660,150)"><circle r="34" fill="#e4572e" fill-opacity=".18" stroke="#e4572e"/><text x="0" y="4" text-anchor="middle" class="pm-name">Joby S4</text><text x="0" y="50" text-anchor="middle" class="pm-meta">100+ mi · 1+4</text></g>
+                <g transform="translate(540,245)"><circle r="27" fill="#9fc7d8" fill-opacity=".16" stroke="#9fc7d8"/><text x="0" y="4" text-anchor="middle" class="pm-name">Archer</text><text x="0" y="44" text-anchor="middle" class="pm-meta">~100 mi · 1+4</text></g>
+                <g transform="translate(450,110)"><circle r="30" fill="#9bbf8f" fill-opacity=".16" stroke="#9bbf8f"/><text x="0" y="4" text-anchor="middle" class="pm-name">Beta Alia</text><text x="0" y="46" text-anchor="middle" class="pm-meta">~250 mi · 1+5</text></g>
+                <g transform="translate(300,400)"><circle r="26" fill="#e9b44c" fill-opacity=".18" stroke="#e9b44c"/><text x="0" y="4" text-anchor="middle" class="pm-name">EH216-S</text><text x="0" y="42" text-anchor="middle" class="pm-meta">18 mi · 2 pax</text></g>
+                <g transform="translate(390,300)"><circle r="25" fill="#c7a6d8" fill-opacity=".16" stroke="#c7a6d8"/><text x="0" y="4" text-anchor="middle" class="pm-name">Vertical VX4</text><text x="0" y="42" text-anchor="middle" class="pm-meta">~100 mi · 1+4</text></g>
+                <g transform="translate(250,210)"><circle r="23" fill="#f2a68d" fill-opacity=".16" stroke="#f2a68d"/><text x="0" y="4" text-anchor="middle" class="pm-name">X3-F / A868</text><text x="0" y="40" text-anchor="middle" class="pm-meta">12–310 mi</text></g>
+              </g>
+              <text x="770" y="110" text-anchor="end" class="svg-mono">BUBBLE = SEATS / NOT TO SCALE</text>
+            </svg>
+          </div>
+          <div class="position-notes reveal">
+            <div><span class="dot dot--accent"></span><b>Joby 的领先</b><p>FAA 第五阶段、丰田制造、Blade 需求、迪拜六年独家——四条腿都比单纯“飞得远”更难复制。</p></div>
+            <div><span class="dot dot--sky"></span><b>Archer 的追赶</b><p>UAE 受限型号认证、Stellantis 制造、城市航线定位；在美国 FAA 进度上落后于 Joby。</p></div>
+            <div><span class="dot dot--green"></span><b>Beta 的差异</b><p>更长的航程与货运先行，适合区域物流/医疗，而不是城市机场接驳。</p></div>
+            <div><span class="dot dot--amber"></span><b>EH216-S 的不同赛道</b><p>无人驾驶、30 km 观光，已取得中国四证；与 Joby 的“piloted air taxi”不是同一产品。</p></div>
+          </div>
+        </div>
+
+        <div class="table-wrap reveal">
+          <table class="data-table data-table--dark">
+            <caption>表 1. 代表性 eVTOL / 飞行汽车对比（公开资料，2026-11）</caption>
+            <thead><tr><th>产品</th><th>类别</th><th>座位</th><th>航程</th><th>速度</th><th>适航/商业化</th><th>关键取舍</th></tr></thead>
+            <tbody>
+              <tr><td><b>Joby S4</b></td><td>倾转旋翼 eVTOL</td><td>1 + 4</td><td>100+ mi</td><td>200 mph</td><td>FAA 第五阶段；迪拜待 AOC</td><td>速度/航程 vs 过渡复杂度</td></tr>
+              <tr><td><b>Archer Midnight</b></td><td>倾转旋翼 eVTOL</td><td>1 + 4</td><td>~100 mi</td><td>~150 mph</td><td>FAA 认证中；UAE 受限 TC</td><td>城市航线 vs 航程</td></tr>
+              <tr><td><b>Beta Alia</b></td><td>eVTOL / eCTOL</td><td>1 + 5</td><td>~250 mi</td><td>~138 mph</td><td>FAA 认证中；货运先行</td><td>区域航程 vs 城市适配</td></tr>
+              <tr><td><b>EH216-S</b></td><td>多旋翼无人驾驶</td><td>2</td><td>18 mi</td><td>80 mph</td><td>中国 TC/PC/AC/OC</td><td>观光 vs 航程/速度</td></tr>
+              <tr><td><b>Vertical VX4</b></td><td>倾转旋翼 eVTOL</td><td>1 + 4</td><td>~100 mi</td><td>~150 mph</td><td>UK/EASA 认证中</td><td>欧洲市场 vs 进度</td></tr>
+              <tr><td><b>X3-F / A868</b></td><td>分体式/倾转混电</td><td>2 / 6</td><td>12 / 310 mi</td><td>45 / 224 mph</td><td>X3-F TC 未颁；A868 试飞</td><td>陆空两栖 vs 性能/监管</td></tr>
+            </tbody>
+          </table>
+          <p class="table-note">数据来自各企业官网与公开报道 [1][12][13][14][15][16][17]。航程/速度测试条件不同，不可直接排序；“认证中”表示公开信息未显示已取得型号合格证。</p>
+        </div>
+
+        <div class="moat-grid">
+          <div class="moat-card reveal"><span>01</span><h3>FAA 进度</h3><p>第五阶段与大量 for-credit 测试，是最难用资本短期买到的资产。</p></div>
+          <div class="moat-card reveal"><span>02</span><h3>丰田制造</h3><p>汽车级制造体系、供应链与质量能力，决定能否从 17 架走到数百架。</p></div>
+          <div class="moat-card reveal"><span>03</span><h3>Blade 需求</h3><p>现成的乘客、航线与运营团队，让 S4 取证后有地方可飞、有人可载。</p></div>
+          <div class="moat-card reveal"><span>04</span><h3>迪拜独家</h3><p>六年独家协议 + 已认证起降场，给出海首站一个受控试验场。</p></div>
+        </div>
+        <p class="section-footnote">不是护城河：发布会渲染图、订单 headline、万亿 TAM、单次演示飞行。它们不能替代 TC、AOC、利用率和单位经济性。</p>
+      </div>
+    </section>
+
+    <!-- 08 ROADMAP -->
+    <section class="section" id="roadmap" aria-labelledby="roadmap-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-no">08 / ROADMAP &amp; SCENARIOS</div>
+          <h2 id="roadmap-title">从“首飞”到“首航”，<br>还差五个门槛</h2>
+          <p class="section-dek">Joby 的路线图不是“年份 + 销量”，而是“证 + 场 + 人 + 钱 + 利用率”。任何一个门槛不成立，规模化就会推迟。</p>
+        </div>
+
+        <div class="roadmap reveal">
+          <div class="roadmap-scale"><span>2024</span><span>2025</span><span>2026</span><span>2027</span><span>2028</span><span>2030+</span></div>
+          <div class="roadmap-lanes">
+            <div class="lane"><div class="lane-label">适航</div><div class="lane-track"><div class="lane-bar" style="--start:0%;--span:55%">FAA 五阶段</div><div class="lane-bar lane-bar--soft" style="--start:52%;--span:30%">TC / PC / AC</div></div></div>
+            <div class="lane"><div class="lane-label">运营</div><div class="lane-track"><div class="lane-bar" style="--start:18%;--span:35%">迪拜准备</div><div class="lane-bar lane-bar--soft" style="--start:48%;--span:42%">首航 → 网络</div></div></div>
+            <div class="lane"><div class="lane-label">制造</div><div class="lane-track"><div class="lane-bar" style="--start:30%;--span:30%">17 架</div><div class="lane-bar lane-bar--soft" style="--start:55%;--span:35%">规模化</div></div></div>
+            <div class="lane"><div class="lane-label">市场</div><div class="lane-track"><div class="lane-bar lane-bar--ghost" style="--start:58%;--span:38%">票价下降 / 网络效应</div></div></div>
+          </div>
+        </div>
+
+        <div class="gates">
+          <div class="gate reveal"><span>G1</span><h3>FAA TC</h3><p>设计合规；美国商业载客的前置条件。</p></div>
+          <div class="gate reveal"><span>G2</span><h3>GCAA AOC</h3><p>迪拜运营人资质；没有它，起降场认证也不能卖票。</p></div>
+          <div class="gate reveal"><span>G3</span><h3>10+ 架在役</h3><p>证明制造、维修、备件与飞行员培训能支撑机队。</p></div>
+          <div class="gate reveal"><span>G4</span><h3>8–10 班/日</h3><p>单机利用率。低于这个数，单位经济性很难成立。</p></div>
+          <div class="gate reveal"><span>G5</span><h3>票价 < 直升机</h3><p>从高端体验走向可重复的交通产品。</p></div>
+        </div>
+
+        <div class="scenario-table reveal">
+          <div class="mono-label">SCENARIOS / 2028</div>
+          <table class="data-table">
+            <thead><tr><th>情景</th><th>关键假设</th><th>在役机队</th><th>单机日班次</th><th>2028 收入量级</th></tr></thead>
+            <tbody>
+              <tr><td>推迟</td><td>TC 2027 才颁发，迪拜 AOC 延后</td><td>5–10</td><td>4–6</td><td>$20–50M</td></tr>
+              <tr><td>基准</td><td>2026/27 TC + 迪拜首航，2027 扩至美国试点</td><td>25–40</td><td>6–8</td><td>$150–300M</td></tr>
+              <tr><td>加速</td><td>TC 顺利、迪拜满产、美国 eIPP 转常态</td><td>50–70</td><td>8–10</td><td>$350–600M</td></tr>
+            </tbody>
+          </table>
+          <p class="table-note">情景为本文假设，不是 Joby 指引。收入只计运营服务，不含飞机销售/防务；实际取决于认证、起降场、需求和票价。</p>
+        </div>
+
+        <div class="recommend-grid">
+          <div class="recommend reveal"><span>FOR INVESTORS</span><h3>看利用率，不看订单</h3><p>跟踪 TC/AOC、在役机队、日班次、票价、Blade 转化与现金消耗。订单和合作只是期权，不是收入。</p></div>
+          <div class="recommend reveal"><span>FOR OPERATORS</span><h3>先做机场，再做城市</h3><p>机场接驳的需求、起降场与支付意愿最明确；不要一开始就承诺“城市通勤”。</p></div>
+          <div class="recommend reveal"><span>FOR REGULATORS</span><h3>用运行数据换空域</h3><p>先批受控航线，积累噪声、可靠性与事故征候数据，再逐步扩展。</p></div>
+          <div class="recommend reveal"><span>FOR STUDENTS</span><h3>把“能飞”拆成四层</h3><p>技术可行、适航可行、运营可行、商业可行。任何一层不成立，产品都还在演示阶段。</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 09 CONCLUSION -->
+    <section class="section section--accent" id="conclusion" aria-labelledby="conclusion-title">
+      <div class="wrap conclusion-wrap">
+        <div class="section-no">09 / CONCLUSION</div>
+        <h2 id="conclusion-title">S4 已经证明它能飞，<br>接下来要证明它能被“反复地飞”</h2>
+        <div class="conclusion-body">
+          <p>Joby S4 是这一代 eVTOL 里最接近“可运营产品”的选手：倾转旋翼带来速度和航程，丰田带来制造，Blade 带来乘客，迪拜带来首站。但它还没有跨过最后一张证、第一个 AOC 和第一班可重复的付费航班。</p>
+          <p>空中出租车的第一个市场，不是替代城市通勤，而是<strong>把机场变近</strong>。当 60–120 分钟的地面行程被压缩到 15–30 分钟，票价从直升机级降到高端网约车级，S4 才真正从“演示”变成“交通”。</p>
+          <p>所以，衡量 Joby 的指标不是“又签了多少订单”，而是：TC 什么时候发、迪拜什么时候卖票、每架飞机每天飞几班、每班坐几个人、每座英里成本降到多少。答案不在发布会，而在这些运营数字里。</p>
+        </div>
+        <div class="conclusion-sign"><span>— 完 —</span><span>证据截止 2026-11-25</span></div>
+      </div>
+    </section>
+
+    <!-- 10 SOURCES -->
+    <section class="section section--paper" id="sources" aria-labelledby="sources-title">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="section-no">10 / REFERENCES &amp; IMAGE CREDITS</div>
+          <h2 id="sources-title">来源、图片与说明</h2>
+          <p class="section-dek">所有来源均在 2026-11-25 访问。A 级为监管/官方文件，B 级为企业/主流媒体，C 级为行业报告，D 级为本文估算。</p>
+        </div>
+
+        <div class="sources-layout">
+          <ol class="source-list">
+            <li id="ref1"><span class="grade">B</span><div><b>Joby Aviation.</b> Technology / S4 specifications[EB/OL]. <a href="https://www.jobyaviation.com/technology" target="_blank" rel="noopener">官方页面</a></div></li>
+            <li id="ref2"><span class="grade">B</span><div><b>Joby Aviation.</b> Joby Reports Third Quarter 2026 Financial Results[N]. 2026-11-04. <a href="https://www.jobyaviation.com/news/joby-reports-third-quarter-2026-financial-results" target="_blank" rel="noopener">原文</a></div></li>
+            <li id="ref3"><span class="grade">B</span><div><b>Joby Aviation.</b> Experience / launch markets[EB/OL]. <a href="https://www.jobyaviation.com/experience" target="_blank" rel="noopener">官方页面</a></div></li>
+            <li id="ref4"><span class="grade">B</span><div><b>Joby Aviation.</b> Q4 2025 / FY2025 results[EB/OL]. <a href="https://www.jobyaviation.com/news" target="_blank" rel="noopener">新闻中心</a></div></li>
+            <li id="ref5"><span class="grade">C</span><div><b>Strategic Revenue Insights.</b> UAE Air Taxi Launch Nears as Revenue Heads to USD 36 Billion[R]. 2026-10-18. <a href="https://www.strategicrevenueinsights.com/press-releases/uae-air-taxi-launch-nears-as-revenue-heads-for-36-billion" target="_blank" rel="noopener">原文</a></div></li>
+            <li id="ref6"><span class="grade">B</span><div><b>Simple Flying.</b> Are Electric Air Taxis Actually Ready For Passengers In 2026?[EB/OL]. <a href="https://simpleflying.com/electric-air-taxis-actually-ready-passengers-2026/" target="_blank" rel="noopener">原文</a></div></li>
+            <li id="ref7"><span class="grade">B</span><div><b>Joby Aviation.</b> Dubai[EB/OL]. <a href="https://www.jobyaviation.com/locations/dubai" target="_blank" rel="noopener">官方页面</a></div></li>
+            <li id="ref8"><span class="grade">B</span><div><b>Joby Aviation.</b> New York City / Los Angeles[EB/OL]. <a href="https://www.jobyaviation.com/locations/nyc" target="_blank" rel="noopener">NYC</a> · <a href="https://www.jobyaviation.com/locations/los-angeles" target="_blank" rel="noopener">LA</a></div></li>
+            <li id="ref9"><span class="grade">B</span><div><b>Joby Aviation.</b> Company / partners (Delta, Toyota, Uber, Blade)[EB/OL]. <a href="https://www.jobyaviation.com/company" target="_blank" rel="noopener">官方页面</a></div></li>
+            <li id="ref10"><span class="grade">A</span><div><b>FAA.</b> Powered-Lift / eVTOL certification and operations[EB/OL]. <a href="https://www.faa.gov/air-taxis" target="_blank" rel="noopener">FAA AAM</a></div></li>
+            <li id="ref11"><span class="grade">A</span><div><b>U.S. Department of Transportation.</b> eVTOL Integration Pilot Program (eIPP)[EB/OL]. 2026. <a href="https://www.transportation.gov/" target="_blank" rel="noopener">DOT</a></div></li>
+            <li id="ref12"><span class="grade">B</span><div><b>Archer Aviation.</b> Midnight[EB/OL]. <a href="https://www.archer.com/midnight" target="_blank" rel="noopener">官方页面</a></div></li>
+            <li id="ref13"><span class="grade">B</span><div><b>Beta Technologies.</b> Alia[EB/OL]. <a href="https://www.beta.team/aircraft/" target="_blank" rel="noopener">官方页面</a></div></li>
+            <li id="ref14"><span class="grade">B</span><div><b>EHang.</b> EH216-S[EB/OL]. <a href="https://www.ehang.com/ehang216s/" target="_blank" rel="noopener">官方页面</a></div></li>
+            <li id="ref15"><span class="grade">B</span><div><b>Vertical Aerospace.</b> VX4[EB/OL]. <a href="https://vertical.aero/" target="_blank" rel="noopener">官方页面</a></div></li>
+            <li id="ref16"><span class="grade">B</span><div><b>AutoFlight.</b> Prosperity I[EB/OL]. <a href="https://www.autoflight.com/" target="_blank" rel="noopener">官方页面</a></div></li>
+            <li id="ref17"><span class="grade">B</span><div><b>ARIDGE / 小鹏汇天.</b> X3-F / A868[EB/OL]. <a href="https://www.aridge.com/x3" target="_blank" rel="noopener">X3</a> · <a href="https://www.aridge.com/a868" target="_blank" rel="noopener">A868</a></div></li>
+          </ol>
+
+          <aside class="appendix">
+            <div class="appendix-card"><div class="mono-label">IMAGE CREDITS / 图片</div><p><b>题图：</b>U.S. Air Force photo by Harlan Huntington, Joby S4 at Edwards AFB, 2023. Public Domain, via Wikimedia Commons.<br><b>图 2：</b>Joby Aviation, S4 over Tampa, 2026-10-29, from Q3 2026 results [2].<br><b>图 3：</b>Joby Aviation, S4 wing/tilt detail, from technology page [1]. 图片用于课程研究与评论。</p></div>
+            <div class="appendix-card"><div class="mono-label">ABBREVIATIONS / 缩写</div><p><b>eVTOL</b> 电动垂直起降；<b>TC</b> 型号合格证；<b>PC</b> 生产许可证；<b>AC</b> 适航证；<b>AOC</b> 航空运营人许可证；<b>FAA</b> 美国联邦航空局；<b>GCAA</b> 阿联酋民航总局；<b>TAM/SAM/SOM</b> 总体/可服务/可获得市场。</p></div>
+            <div class="appendix-card"><div class="mono-label">AI USE / AI 使用说明</div><p>本作业在资料检索、结构化分析、图表与前端实现过程中使用了 AI 助手。事实尽量回溯公开来源；情景、评分、票价与单位经济性均标注为本文估算，不冒充企业或局方结论。</p></div>
+            <div class="appendix-card"><div class="mono-label">VERSION / 声明</div><p>v1.0 · 2026-11-25<br>本页为课程作业，不构成投资建议、采购建议或适航结论。产品参数、认证状态与商业计划可能随官方披露更新。</p></div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap footer-inner">
+      <div class="footer-brand"><span class="brand-mark">J/S4</span><div><strong>低空航线档案 / AIR TAXI DOSSIER</strong><p>飞行汽车技术基础 · 课程作业 01 · 2026</p></div></div>
+      <div class="footer-meta"><span>对象 / Joby S4</span><span>证据截止 / 2026-11-25</span><a href="#top">回到顶部 ↑</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/app.js" defer></script>
+</body>
+</html>
+
+
+
+
